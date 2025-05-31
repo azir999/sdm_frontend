@@ -7,18 +7,15 @@
         <h1 class="text-2xl font-semibold text-text-dark">Selamat Datang, {{ Auth::user()->name ?? 'Admin' }}!</h1>
         <p class="text-sm text-text-muted">Berikut adalah ringkasan aktivitas dan data terbaru sistem.</p>
     </div>
-
-    {{-- Grid Utama untuk Layout Konten Dashboard --}}
-    {{-- Kita akan biarkan grid ini menentukan tingginya berdasarkan kontennya,
-        tapi kita akan pastikan konten di dalamnya mengisi penuh sel grid masing-masing. --}}
+    <!-- Grid Utama untuk Layout Konten Dashboard Tinggi otomatis-->
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 md:gap-6">
 
-        {{-- Kolom Kiri: Sekarang menjadi flex container vertikal agar kartu performa bisa tumbuh --}}
+        <!-- Kolom Kiri: Sekarang menjadi flex container vertikal agar responsif -->
         <div class="lg:col-span-3 flex flex-col space-y-4 md:space-y-6">
 
-            {{-- Baris untuk 3 Kartu Statistik Atas (tetap seperti sebelumnya) --}}
+            <!-- Baris untuk 3 Card Statistik Atas-->
             <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
-                {{-- Kartu Jumlah Pegawai --}}
+                <!-- Card Jumlah Pegawai -->
                 <div class="rounded-lg border border-gray-200 bg-card-green p-6 shadow-sm text-white flex flex-col justify-between h-full">
                     <div>
                         <div class="flex items-center justify-between">
@@ -31,10 +28,10 @@
                             </div>
                         </div>
                     </div>
-                    <a href="{{ route('admin.pegawai.ringkasan') }}" class="mt-4 block text-center text-sm font-medium hover:underline">Menu Pegawai</a>
+                    <a href="{{ route('admin.pegawai.ringkasan') }}" class="mt-4 block text-center text-sm font-medium hover:font-bold">Menu Pegawai</a>
                 </div>
 
-                {{-- Kartu Jumlah Sertifikasi Masuk --}}
+                <!-- Card Jumlah Sertifikasi Masuk -->
                 <div class="rounded-lg border border-gray-200 bg-card-blue p-6 shadow-sm text-white flex flex-col justify-between h-full">
                     <div>
                         <div class="flex items-center justify-between">
@@ -47,10 +44,10 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="mt-4 block text-center text-sm font-medium hover:underline">Menu Penilaian</a>
+                    <a href="#" class="mt-4 block text-center text-sm font-medium hover:font-bold">Menu Penilaian</a>
                 </div>
 
-                {{-- Kartu Periode Aktif --}}
+                <!-- Card Periode Aktif -->
                 <div class="rounded-lg border border-gray-200 bg-card-red p-6 shadow-sm text-white flex flex-col justify-between h-full">
                     <div>
                         <div>
@@ -58,19 +55,19 @@
                             <span class="text-4xl font-bold">{{ $periodeAktif ?? 'Jan - Juni' }}</span>
                         </div>
                     </div>
-                    <a href="#" class="mt-2 block text-center text-sm font-medium hover:underline">Menu Periode</a>
+                    <a href="#" class="mt-2 block text-center text-sm font-medium hover:font-bold">Menu Periode</a>
                 </div>
             </div>
 
-            {{-- Card Ringkasan Performa Pegawai: Dibuat agar bisa tumbuh (flex-grow) dan kontennya vertikal --}}
+            <!-- Card Ringkasan Performa Pegawai: Dibuat agar bisa tumbuh (flex-grow) dan kontennya vertikal -->
             <div class="rounded-lg border border-gray-200 bg-card-orange p-6 shadow-sm text-white flex flex-col flex-grow">
                 <div class="mb-4 flex items-center justify-between flex-shrink-0">
                     <h4 class="text-lg font-semibold">Ringkasan Performa Pegawai</h4>
                     <i class="fas fa-chart-line text-xl"></i>
                 </div>
-                {{-- Container chart dibuat agar tumbuh dan kontennya di tengah --}}
+                <!-- Container chart dibuat agar tumbuh dan kontennya di tengah -->
                 <div class="flex justify-center items-center flex-grow h-full">
-                    {{-- Wrapper untuk chart agar bisa responsif dan menjaga rasio aspek --}}
+                    <!-- Wrapper untuk chart agar bisa responsif dan menjaga rasio aspek -->
                     <div class="relative w-full h-full max-w-[250px] sm:max-w-[300px] aspect-square mx-auto">
                         <canvas id="performaPegawaiChart"></canvas>
                         <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -81,13 +78,13 @@
             </div>
         </div>
 
-        {{-- Kolom Kanan (Notifikasi): Sudah menggunakan flex flex-col h-full, ini baik --}}
+        <!-- Kolom Kanan (Notifikasi): Sudah menggunakan flex flex-col h-full -->
         <div class="rounded-lg border border-gray-200 bg-notification-bg p-6 shadow-sm text-white lg:col-span-1 flex flex-col h-full">
             <div class="mb-4 flex items-center justify-between flex-shrink-0">
                 <h4 class="text-lg font-semibold">Notifikasi</h4>
                 <i class="fas fa-bell text-xl"></i>
             </div>
-            {{-- Konten notifikasi akan scroll jika melebihi tinggi kartu --}}
+            <!-- Konten notifikasi akan scroll responsif-->
             <div class="space-y-3 flex-grow overflow-y-auto">
                 @forelse ($notifications ?? [] as $notification)
                     <div class="flex items-center justify-between p-2.5 bg-gray-700 bg-opacity-50 rounded-md">
@@ -100,11 +97,11 @@
                         @endif
                     </div>
                 @empty
-                    @for ($i = 0; $i < 3; $i++)
+                    @for ($i = 0; $i < 8; $i++)
                     <div class="flex items-center justify-between p-2.5 bg-gray-700 bg-opacity-50 rounded-md">
                         <div>
                             <p class="text-sm font-medium">Contoh Notifikasi ({{ $i + 1 }})</p>
-                            <p class="text-xs text-gray-300">Mei {{ 20 + $i }}, 2025</p>
+                            <p class="text-xs text-gray-300">Mei {{ 1 + $i }}, 2025</p>
                         </div>
                         @if($i == 0)
                         <span class="text-xs px-2 py-1 bg-red-500 text-white rounded-full">New</span>
@@ -126,8 +123,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const ctxPerforma = document.getElementById('performaPegawaiChart');
 
     if (ctxPerforma) {
-        const performaBaik = {{ $performaBaik ?? 30 }};
-        const performaCukup = {{ $performaCukup ?? 40 }};
+        const performaBaik = {{ $performaBaik ?? 70 }};
+        const performaCukup = {{ $performaCukup ?? 20 }};
         let performaKurangHitung = 100 - (performaBaik + performaCukup);
         const performaKurang = performaKurangHitung > 0 ? performaKurangHitung : 0;
 
@@ -159,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: true, // Diubah menjadi true agar chart menjaga rasio aspeknya (lingkaran)
+                maintainAspectRatio: true,
                 cutout: '70%',
                 plugins: {
                     legend: {

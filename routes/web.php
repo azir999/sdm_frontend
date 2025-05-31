@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\PegawaiController; // Pastikan controller ini diimport
+use App\Http\Controllers\Admin\PegawaiController;
+use App\Http\Controllers\Admin\PelamarController;
+use App\Http\Controllers\Admin\PsikologiController;
+use App\Http\Controllers\Admin\WawancaraController;
+use App\Http\Controllers\Admin\ValidasiPelamarController;
 
 Route::name('admin.') // Nama rute tetap diawali 'admin.' agar konsisten dengan layout Anda
     ->group(function () {   // Mendefinisikan sebuah grup untuk rute-rute berikut:
@@ -59,4 +63,12 @@ Route::name('admin.') // Nama rute tetap diawali 'admin.' agar konsisten dengan 
     Route::get('/ringkasan-pegawai', [PegawaiController::class, 'ringkasan'])
          ->name('pegawai.ringkasan'); // Nama rute: admin.pegawai.ringkasan -> URL: /ringkasan-pegawai
 
+    Route::get('/pelamar/input-data', [PelamarController::class, 'create'])->name('pelamar.create');
+
+    Route::get('/psikologi/input-data', [PsikologiController::class, 'create'])->name('psikologi.create');
+    // Rute untuk menyimpan data (buat nanti jika diperlukan)
+    // Route::post('/psikologi/store', [PsikologiController::class, 'store'])->name('psikologi.store');
+    Route::get('/wawancara/input-data', [WawancaraController::class, 'create'])->name('wawancara.create');
+
+    Route::get('/validasi-pelamar', [ValidasiPelamarController::class, 'index'])->name('validasi.pelamar.index');
 });

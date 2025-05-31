@@ -9,7 +9,7 @@ class PegawaiController extends Controller
 {
     public function ringkasan()
     {
-        // Data dummy untuk tabel, nantinya bisa diambil dari database
+        // Data dummy untuk tabel
         $dataRingkasan = [
             'dosen' => ['laki_laki' => 70, 'perempuan' => 50, 'jumlah' => 120],
             'karyawan' => ['laki_laki' => 30, 'perempuan' => 50, 'jumlah' => 80],
@@ -17,7 +17,6 @@ class PegawaiController extends Controller
         
         $totalPegawaiKeseluruhan = $dataRingkasan['dosen']['jumlah'] + $dataRingkasan['karyawan']['jumlah'];
 
-        // Anda bisa juga menghitung total laki-laki dan perempuan jika diperlukan di view
         $totalLakiLaki = $dataRingkasan['dosen']['laki_laki'] + $dataRingkasan['karyawan']['laki_laki'];
         $totalPerempuan = $dataRingkasan['dosen']['perempuan'] + $dataRingkasan['karyawan']['perempuan'];
 
