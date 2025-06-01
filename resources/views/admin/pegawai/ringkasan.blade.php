@@ -23,7 +23,7 @@
         <div class="w-full sm:w-auto">
             <div class="relative inline-block text-left w-full sm:w-auto">
                 <div>
-                    <button type="button" id="filterDropdownButton" class="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-2 px-4 rounded-md inline-flex items-center justify-center border border-gray-300 shadow-sm" aria-expanded="true" aria-haspopup="true">
+                    <button type="button" id="filterDropdownButton" class="w-full sm:w-auto bg-white hover:bg-gray-200 text-gray-700 py-2 px-4 rounded-md inline-flex items-center justify-center border border-gray-300 shadow-sm" aria-expanded="true" aria-haspopup="true">
                         <span id="filterButtonText">Filter</span>
                         <i class="fas fa-chevron-down ml-2"></i>
                     </button>

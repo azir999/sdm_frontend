@@ -43,14 +43,14 @@
                     </div>
                 </div>
                 <div>
-                    <label for="rekomendasi" class="block text-sm font-medium text-gray-700 mb-1">
-                        Rekomendasikan/Tidak <span class="text-red-500">*</span>
+                    <label for="lulus" class="block text-sm font-medium text-gray-700 mb-1">
+                        Pilih Lulus/Tidak <span class="text-red-500">*</span>
                     </label>
-                    <select id="rekomendasi" name="rekomendasi" 
+                    <select id="lulus" name="lulus" 
                             class="form-select mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm py-2 px-3">
-                        <option value="">-Pilih Rekomendasikan/Tidak-</option>
-                        <option value="rekomendasikan">Rekomendasikan</option>
-                        <option value="tidak_rekomendasikan">Tidak Rekomendasikan</option>
+                        <option value="">-Pilih Lulus/Tidak-</option>
+                        <option value="lulus">Lulus</option>
+                        <option value="tidak_lulus">Tidak Lulus</option>
                     </select>
                 </div>
             </div>

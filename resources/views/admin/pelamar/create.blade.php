@@ -11,7 +11,6 @@
     <div class="bg-white shadow-lg rounded-lg p-6 md:p-8">
         <form action="#" method="POST" enctype="multipart/form-data">
             @csrf
-            {{-- Mengubah grid menjadi satu kolom untuk semua ukuran layar --}}
             <div class="grid grid-cols-1 gap-y-6">
 
                 <div>

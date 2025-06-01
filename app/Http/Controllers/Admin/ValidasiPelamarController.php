@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Collection; // << Tambahkan ini untuk menggunakan Collection
+use Illuminate\Support\Collection;
 
 class ValidasiPelamarController extends Controller
 {
@@ -31,7 +31,6 @@ class ValidasiPelamarController extends Controller
             ],
         ];
 
-        // Konversi array menjadi Laravel Collection
         $pelamarData = collect($pelamarArray);
 
         return view('admin.validasi.index', compact('pelamarData'));

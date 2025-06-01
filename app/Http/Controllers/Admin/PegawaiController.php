@@ -9,7 +9,6 @@ class PegawaiController extends Controller
 {
     public function ringkasan()
     {
-        // Data dummy untuk tabel
         $dataRingkasan = [
             'dosen' => ['laki_laki' => 70, 'perempuan' => 50, 'jumlah' => 120],
             'karyawan' => ['laki_laki' => 30, 'perempuan' => 50, 'jumlah' => 80],

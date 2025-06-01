@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,9 +41,6 @@
             display: flex; justify-content: center; align-items: center; color: white; font-weight: bold;
         }
 
-        .pt-navbar {
-            padding-top: 55px; 
-        }
     </style>
     @stack('styles')
 </head>
@@ -55,12 +52,10 @@
                    bg-gradient-to-r from-[#1E3A8A] to-[#1865B3] 
                    text-white duration-300 ease-linear lg:static lg:translate-x-0 -translate-x-full">
         
-            <div class="flex items-center justify-between gap-2 px-6 h-[55px] bg-white shadow-lg">
+            <div class="flex items-center justify-between lg:justify-center gap-2 px-6 h-[56px] bg-white shadow-lg">
                 <a href="{{ route('admin.dashboard') }}" class="flex items-center">
-                    <img src="https://via.placeholder.com/40/1E3A8A/FFFFFF?text=BD" alt="Logo" class="mr-2 h-8 w-auto">
-                    <span class="text-xl font-semibold text-[#1E3A8A]">Bina Darma</span>
+                    <img src="{{ asset('images/logo-binadarma.png') }}" alt="Logo Bina Darma" class="mr-2 h-14 w-auto">
                 </a>
-        
                 <button class="block lg:hidden text-[#1E3A8A]" onclick="toggleSidebar()"> 
                     <i class="fas fa-times p-2"></i>
                 </button>
@@ -69,69 +64,72 @@
             <div class="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear">
                 <nav class="mt-4 py-4 px-0">
                     <div>
-                        <h6 class="mb-2 px-8 text-xs font-semibold text-white/75">
+                        <h6 class="mb-2 px-8 text-sm font-semibold text-white/75">
                             Menu Utama
                         </h6>
                         <ul class="text-sm text-white"> 
                             <li class="animation py-3 hover:text-white/50 {{ Request::routeIs('admin.dashboard') ? 'border-l-8 border-yellow-300 bg-gradient-to-l from-[#FCD34D]/80 to-[#1865B3]' : '' }}">
                                 <a href="{{ route('admin.dashboard') }}"
                                    class="flex items-center space-x-3 font-semibold {{ Request::routeIs('admin.dashboard') ? 'px-6 text-white' : 'px-8 text-white/90' }}">
-                                    <i class="fas fa-tachometer-alt {{ Request::routeIs('admin.dashboard') ? 'text-white' : 'text-white/75' }} h-5 w-5"></i>
+                                    <i class="fas fa-tachometer-alt {{ Request::routeIs('admin.dashboard') ? 'text-white' : 'text-white/75' }} h-5 w-5 inline-flex items-center justify-center"></i>
                                     <span>Dashboard</span> 
                                 </a>
                             </li>
                             <li class="animation py-3 hover:text-white/50 {{ Request::routeIs('admin.perekrutan.index') ? 'border-l-8 border-yellow-300 bg-gradient-to-l from-[#FCD34D]/80 to-[#1865B3]' : '' }}">
                                 <a href="{{ route('admin.perekrutan.index') }}"
                                    class="flex items-center space-x-3 font-semibold {{ Request::routeIs('admin.perekrutan.index') ? 'px-6 text-white' : 'px-8 text-white/90' }}">
-                                    <i class="fas fa-user-plus {{ Request::routeIs('admin.perekrutan.index') ? 'text-white' : 'text-white/75' }} h-5 w-5"></i>
+                                    <i class="fas fa-user-plus {{ Request::routeIs('admin.perekrutan.index') ? 'text-white' : 'text-white/75' }} h-5 w-5 inline-flex items-center justify-center"></i>
                                     <span>Perekrutan</span>
                                 </a>
                             </li>
                             <li class="animation py-3 hover:text-white/50 {{ Request::routeIs('admin.penerimaan.index') ? 'border-l-8 border-yellow-300 bg-gradient-to-l from-[#FCD34D]/80 to-[#1865B3]' : '' }}">
                                 <a href="{{ route('admin.penerimaan.index') }}"
                                    class="flex items-center space-x-3 font-semibold {{ Request::routeIs('admin.penerimaan.index') ? 'px-6 text-white' : 'px-8 text-white/90' }}">
-                                    <i class="fas fa-user-check {{ Request::routeIs('admin.penerimaan.index') ? 'text-white' : 'text-white/75' }} h-5 w-5"></i>
+                                    <i class="fas fa-user-check {{ Request::routeIs('admin.penerimaan.index') ? 'text-white' : 'text-white/75' }} h-5 w-5 inline-flex items-center justify-center"></i>
                                     <span>Penerimaan</span>
                                 </a>
                             </li>
+                            <h6 class="mb-2 px-8 text-sm font-semibold text-white/75 pt-3"> 
+                                Update Soon
+                            </h6>
                             <li class="animation py-3 hover:text-white/50 {{ Request::routeIs('admin.update.index') ? 'border-l-8 border-yellow-300 bg-gradient-to-l from-[#FCD34D]/80 to-[#1865B3]' : '' }}">
                                 <a href="{{ route('admin.update.index') }}"
                                    class="flex items-center space-x-3 font-semibold {{ Request::routeIs('admin.update.index') ? 'px-6 text-white' : 'px-8 text-white/90' }}">
-                                    <i class="fas fa-edit {{ Request::routeIs('admin.update.index') ? 'text-white' : 'text-white/75' }} h-5 w-5"></i>
+                                    <i class="fas fa-edit {{ Request::routeIs('admin.update.index') ? 'text-white' : 'text-white/75' }} h-5 w-5 inline-flex items-center justify-center"></i>
                                     <span>Update</span>
                                 </a>
                             </li>
-                             <h6 class="mb-2 px-8 text-xs font-semibold text-white/75">
+                             <h6 class="mb-2 px-8 text-sm font-semibold text-white/75 pt-3">
                                 Informasi Data
                             </h6>
-                            <li class="animation py-3 hover:text-white/50 {{ Request::routeIs('admin.validasi.index') ? 'border-l-8 border-yellow-300 bg-gradient-to-l from-[#FCD34D]/80 to-[#1865B3]' : '' }}">
-                                <a href="{{ route('admin.validasi.index') }}"
-                                   class="flex items-center space-x-3 font-semibold {{ Request::routeIs('admin.validasi.index') ? 'px-6 text-white' : 'px-8 text-white/90' }}">
-                                    <i class="fas fa-check-circle {{ Request::routeIs('admin.validasi.index') ? 'text-white' : 'text-white/75' }} h-5 w-5"></i>
+                            <li class="animation py-3 hover:text-white/50 {{ Request::routeIs('admin.validasi-cuti.index') ? 'border-l-8 border-yellow-300 bg-gradient-to-l from-[#FCD34D]/80 to-[#1865B3]' : '' }}">
+                                <a href="{{ route('admin.validasi-cuti.index') }}"
+                                   class="flex items-center space-x-3 font-semibold {{ Request::routeIs('admin.validasi-cuti.index') ? 'px-6 text-white' : 'px-8 text-white/90' }}">
+                                    <i class="fas fa-check-circle {{ Request::routeIs('admin.validasi-cuti.index') ? 'text-white' : 'text-white/75' }} h-5 w-5 inline-flex items-center justify-center"></i>
                                     <span>Validasi Cuti</span>
                                 </a>
                             </li>
                             <li class="animation py-3 hover:text-white/50 {{ Request::routeIs('admin.surat-tugas.index') ? 'border-l-8 border-yellow-300 bg-gradient-to-l from-[#FCD34D]/80 to-[#1865B3]' : '' }}">
                                 <a href="{{ route('admin.surat-tugas.index') }}"
                                    class="flex items-center space-x-3 font-semibold {{ Request::routeIs('admin.surat-tugas.index') ? 'px-6 text-white' : 'px-8 text-white/90' }}">
-                                    <i class="fas fa-file-alt {{ Request::routeIs('admin.surat-tugas.index') ? 'text-white' : 'text-white/75' }} h-5 w-5"></i>
+                                    <i class="fas fa-file-alt {{ Request::routeIs('admin.surat-tugas.index') ? 'text-white' : 'text-white/75' }} h-5 w-5 inline-flex items-center justify-center"></i>
                                     <span>Surat Tugas</span>
                                 </a>
                             </li>
                            <li class="animation py-3 hover:text-white/50 {{ Request::routeIs('admin.daftar-telepon.index') ? 'border-l-8 border-yellow-300 bg-gradient-to-l from-[#FCD34D]/80 to-[#1865B3]' : '' }}">
                                 <a href="{{ route('admin.daftar-telepon.index') }}"
                                    class="flex items-center space-x-3 font-semibold {{ Request::routeIs('admin.daftar-telepon.index') ? 'px-6 text-white' : 'px-8 text-white/90' }}">
-                                    <i class="fas fa-address-book {{ Request::routeIs('admin.daftar-telepon.index') ? 'text-white' : 'text-white/75' }} h-5 w-5"></i>
+                                    <i class="fas fa-address-book {{ Request::routeIs('admin.daftar-telepon.index') ? 'text-white' : 'text-white/75' }} h-5 w-5 inline-flex items-center justify-center"></i>
                                     <span>Daftar Telepon</span>
                                 </a>
                             </li>
-                             <h6 class="mb-2 px-8 text-xs font-semibold text-white/75">
+                             <h6 class="mb-2 px-8 text-sm font-semibold text-white/75 pt-3">
                                 Lainnya
                             </h6>
                             <li class="animation py-3 hover:text-white/50 {{ Request::routeIs('admin.profile.index') ? 'border-l-8 border-yellow-300 bg-gradient-to-l from-[#FCD34D]/80 to-[#1865B3]' : '' }}">
                                 <a href="{{ route('admin.profile.index') }}" 
                                    class="flex items-center space-x-3 font-semibold {{ Request::routeIs('admin.profile.index') ? 'px-6 text-white' : 'px-8 text-white/90' }}">
-                                    <i class="fas fa-user {{ Request::routeIs('admin.profile.index') ? 'text-white' : 'text-white/75' }} h-5 w-5"></i>
+                                    <i class="fas fa-user {{ Request::routeIs('admin.profile.index') ? 'text-white' : 'text-white/75' }} h-5 w-5 inline-flex items-center justify-center"></i>
                                     <span>Profil</span>
                                 </a>
                             </li>
@@ -139,7 +137,7 @@
                                 <a href="" 
                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                                    class="flex items-center space-x-3 font-semibold px-8 text-white/90">
-                                    <i class="fas fa-sign-out-alt text-white/75 h-5 w-5"></i>
+                                    <i class="fas fa-sign-out-alt text-white/75 h-5 w-5 inline-flex items-center justify-center"></i>
                                     <span>Keluar</span>
                                 </a>
                             </li>
@@ -154,24 +152,24 @@
         
         <div class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
             
-            <header class="sticky top-0 z-40 flex w-full bg-navbar-bg shadow">
-                <div class="flex flex-grow items-center justify-between py-4 px-4 shadow-2 md:px-6 2xl:px-11">
+            <header class="sticky top-0 z-40 flex w-full bg-navbar-bg shadow mb-8">
+                <div class="flex flex-grow items-center justify-between py-4 px-4 shadow-2 md:px-6 2sm:px-11">
                     <div id="navbar_left_spacer" class="hidden" style="transition: width 0.3s ease-linear;"></div>
                     <div class="flex items-center gap-2 sm:gap-4 lg:gap-3">
                         <button id="sidebarToggleButton" onclick="toggleSidebar()" aria-label="Toggle sidebar" class="text-text-dark hover:text-sidebar-active focus:outline-none focus:ring-2 focus:ring-sidebar-active rounded-md p-1 md:p-2 mr-2 sm:mr-4">
-                            <i class="fas fa-bars lg:hidden text-lg md:text-xl"></i>
+                            <i class="fas fa-bars lg:hidden text-lg md:text-sm"></i>
                         </button>
                         <div>
-                            <h1 class="text-xl font-semibold text-text-dark">Sistem Informasi Sumber Daya Manusia</h1>
+                            <h1 class="text-2xl font-semibold text-text-dark">Sistem Informasi Sumber Daya Manusia</h1>
                         </div>
                     </div>
             
                     <div class="relative">
-                        <button id="userMenuButton" onclick="toggleUserDropdown()" class="flex items-center gap-2 p-2 rounded-md hover:bg-gray-100">
+                        <button id="userMenuButton" onclick="toggleUserDropdown()" class="flex items-center gap-2 rounded-md hover:bg-gray-100">
                             <span class="hidden text-right lg:block">
                                 <span class="block text-sm font-medium text-text-dark">{{ Auth::user()->name ?? 'Admin' }}</span>
                             </span>
-                            <img src="https://via.placeholder.com/40/007BFF/FFFFFF?text={{ substr(Auth::user()->name ?? 'A', 0, 1) }}" alt="User" class="rounded-full">
+                            <img src="{{ asset('images/pp.png') }}" alt="User" class="rounded-full h-12 w-auto">
                             <i class="fas fa-chevron-down text-gray-500 hidden sm:block"></i>
                         </button>
             
@@ -190,7 +188,7 @@
             </header>
 
             <main class="flex-1 overflow-y-auto overflow-x-hidden">
-                <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10 pt-0">
+                <div class="mx-auto max-w-screen-2sm px-4 md:px-6 2sm:px-10 pt-0 pb-0">
                     @yield('content')
                 </div>
             </main>
