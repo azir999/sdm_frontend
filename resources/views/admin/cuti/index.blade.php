@@ -39,13 +39,13 @@
             <table class="min-w-full divide-y divide-gray-200">
                 <thead class="bg-gray-50">
                     <tr>
-                        <th class="px-4 py-3 text-center text-left text-sm font-semibold text-gray-800 uppercase tracking-wider">Kode</th>
-                        <th class="px-4 py-3 text-center text-left text-sm font-semibold text-gray-800 uppercase tracking-wider">Nama</th>
-                        <th class="px-4 py-3 text-center text-left text-sm font-semibold text-gray-800 uppercase tracking-wider">Ikatan Kerja</th>
-                        <th class="px-4 py-3 text-center text-left text-sm font-semibold text-gray-800 uppercase tracking-wider">Jenis Cuti</th>
-                        <th class="px-4 py-3 text-center text-left text-sm font-semibold text-gray-800 uppercase tracking-wider">Tanggal Mulai Cuti</th>
-                        <th class="px-4 py-3 text-center text-left text-sm font-semibold text-gray-800 uppercase tracking-wider">Tanggal Berakhir Cuti</th>
-                        <th class="px-4 py-3 text-center text-left text-sm font-semibold text-gray-800 uppercase tracking-wider">Validasi</th>
+                        <th class="px-4 py-3 text-center text-sm font-semibold text-gray-800 uppercase tracking-wider">Kode</th>
+                        <th class="px-4 py-3 text-center text-sm font-semibold text-gray-800 uppercase tracking-wider">Nama</th>
+                        <th class="px-4 py-3 text-center text-sm font-semibold text-gray-800 uppercase tracking-wider">Ikatan Kerja</th>
+                        <th class="px-4 py-3 text-center text-sm font-semibold text-gray-800 uppercase tracking-wider">Jenis Cuti</th>
+                        <th class="px-4 py-3 text-center text-sm font-semibold text-gray-800 uppercase tracking-wider">Tanggal Mulai Cuti</th>
+                        <th class="px-4 py-3 text-center text-sm font-semibold text-gray-800 uppercase tracking-wider">Tanggal Berakhir Cuti</th>
+                        <th class="px-4 py-3 text-center text-sm font-semibold text-gray-800 uppercase tracking-wider">Validasi</th>
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200 text-sm text-gray-700">
@@ -57,9 +57,9 @@
                         <td class="px-4 py-3 text-center whitespace-nowrap">{{ $cuti->jenis_cuti }}</td>
                         <td class="px-4 py-3 text-center whitespace-nowrap">{{ $cuti->tanggal_mulai }}</td>
                         <td class="px-4 py-3 text-center whitespace-nowrap">{{ $cuti->tanggal_berakhir }}</td>
-                        <td class="px-4 py-3 text-center whitespace-nowrap">
-                        <div class="relative inline-block text-left status-dropdown-container w-full min-w-[100px]">
-                            <button type="button" class="status-cuti-button inline-flex justify-center items-center w-full rounded-md border shadow-sm px-3 py-1 text-sm font-medium text-white focus:outline-none
+                        <td class="px-4 py-3 whitespace-nowrap">
+                        <div class="relative inline-block status-dropdown-container w-full min-w-[100px]">
+                            <button type="button" class="status-cuti-button inline-flex justify-between items-center w-full rounded-md border shadow-sm px-3 py-1 text-sm font-medium text-white focus:outline-none
                                 {{ $cuti->status_validasi == 'terima' ? 'bg-green-500 hover:bg-green-600 border-green-500' : ($cuti->status_validasi == 'tolak' ? 'bg-red-500 hover:bg-red-600 border-red-500' : 'bg-yellow-500 hover:bg-yellow-600 border-yellow-500') }}">
                                 <span class="status-text-cuti">
                                     @if($cuti->status_validasi == 'terima') Terima
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         statusTextSpan.textContent = newText;
                     }
                     
-                    let newClasses = 'inline-flex justify-between items-center w-full rounded-md border shadow-sm px-3 py-1 text-sm font-medium text-white focus:outline-none ';
+                    let newClasses = 'inline-flex justify-between items-center w-[30px] rounded-md border shadow-sm px-3 py-1 text-sm font-medium text-white focus:outline-none ';
                     if (newStatus === 'terima') {
                         newClasses += 'bg-green-500 hover:bg-green-600 border-green-500';
                     } else if (newStatus === 'tolak') {

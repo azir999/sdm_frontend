@@ -9,8 +9,11 @@
     </div>
 
     <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <div class="bg-[#1D3F8E] text-white p-4">
+        <div class="bg-[#1D3F8E] text-white p-4 flex justify-between items-center">
             <h2 class="text-xl font-semibold">Tabel Data Validasi</h2>
+            <a href="{{ route('admin.perekrutan.index') }}" class="text-sm bg-white text-[#1D3F8E] hover:bg-gray-100 font-medium py-2 px-3 rounded-md shadow-sm inline-flex items-center">
+                <i class="fas fa-arrow-left mr-2"></i>Kembali ke Perekrutan
+            </a>
         </div>
 
         <div class="p-4 flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0 border-b border-gray-200">
@@ -33,20 +36,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex flex-wrap items-center space-x-0 sm:space-x-2 space-y-2 sm:space-y-0 w-full sm:w-auto justify-start sm:justify-end">
-                <a href="{{ route('admin.pelamar.create') }}" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-3 rounded-md shadow-sm inline-flex items-center justify-center text-sm">
-                    Input Data Pelamar
-                </a>
-                <a href="{{ route('admin.wawancara.create') }}" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-3 rounded-md shadow-sm inline-flex items-center justify-center text-sm">
-                    Input Data Wawancara
-                </a>
-                <a href="{{ route('admin.psikologi.create') }}" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-3 rounded-md shadow-sm inline-flex items-center justify-center text-sm">
-                    Input Data Psikologi
-                </a>
-                <a href="{{ route('admin.perekrutan.index') }}"class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-3 rounded-md shadow-sm inline-flex items-center justify-center text-sm">
-                    balik ke Perekrutan
-                </a>
-            </div>
+
         </div>
 
         <div class="overflow-x-auto">

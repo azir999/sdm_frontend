@@ -62,12 +62,14 @@ Route::name('admin.')
 
     Route::get('/wawancara/input-data', [WawancaraController::class, 'create'])->name('wawancara.create');
     Route::get('/wawancara', [WawancaraController::class, 'index'])->name('wawancara.index');
+    Route::post('/wawancara', [WawancaraController::class, 'store'])->name('wawancara.store');
     Route::get('/wawancara/{id_wawancara}/edit', [WawancaraController::class, 'edit'])->name('wawancara.edit');
     Route::put('/wawancara/{id_wawancara}', [WawancaraController::class, 'update'])->name('wawancara.update');
     Route::delete('/wawancara/{id_wawancara}', [WawancaraController::class, 'destroy'])->name('wawancara.destroy');
 
-    Route::get('/psikologi/input-data', [PsikologiController::class, 'create'])->name('psikologi.create');
     Route::get('/psikologi', [PsikologiController::class, 'index'])->name('psikologi.index');
+    Route::get('/psikologi/input-data', [PsikologiController::class, 'create'])->name('psikologi.create');
+    Route::post('/psikologi', [PsikologiController::class, 'store'])->name('psikologi.store');
     Route::get('/psikologi/{id_psikologi}/edit', [PsikologiController::class, 'edit'])->name('psikologi.edit');
     Route::put('/psikologi/{id_psikologi}', [PsikologiController::class, 'update'])->name('psikologi.update');
     Route::delete('/psikologi/{id_psikologi}', [PsikologiController::class, 'destroy'])->name('psikologi.destroy');
