@@ -30,6 +30,11 @@
                         </div>
                     </div>
                 </div>
+                    <div class="w-full sm:w-auto">
+                <a href="{{ route('admin.penerimaan.dosen.create') }}" class="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-3 rounded-md shadow-sm inline-flex items-center justify-center text-sm">
+                    <i class="fas fa-plus mr-2"></i> Input Data Dosen
+                </a>
+            </div>
             </div>
             <div class="overflow-x-auto">
                 <table class="min-w-full divide-y divide-gray-200">
@@ -67,7 +72,7 @@
                     <tbody class="bg-white divide-y divide-gray-200 text-sm text-gray-600">
                         @forelse ($penerimaanDosenData ?? [] as $dosen)
                         <tr>
-                            <td class="px-3 py-3 whitespace-nowrap text-center">{{ $dosen->kode }}</td>
+                            <td class="px-3 py-3 text-sm whitespace-nowrap text-center">{{ $dosen->kode }}</td>
                             <td class="px-3 py-3 whitespace-nowrap text-center font-medium text-gray-900">{{ $dosen->nama }}</td>
                             <td class="px-3 py-3 whitespace-nowrap text-center">{{ $dosen->nidn }}</td>
                             <td class="px-3 py-3 whitespace-nowrap text-center">{{ $dosen->nik }}</td>
@@ -110,6 +115,15 @@
                                 <a href="{{ route('admin.penerimaan.dosen.edit', ['id' => $dosen->id]) }}" class="text-blue-600 hover:text-blue-800" title="Edit Data Dosen">
                                     <i class="fas fa-edit text-lg"></i>
                                 </a>
+                               <form action="{{ route('admin.penerimaan.dosen.destroy', ['id' => $dosen->id]) }}" method="POST" class="inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data penerimaan dosen ini?');">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" 
+                                        class="text-red-600 hover:text-red-800 transition-colors duration-150 text-lg" 
+                                        title="Hapus Data Penerimaan Dosen">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </form>
                             </td>
                         </tr>
                         @empty
@@ -145,6 +159,11 @@
                         </div>
                     </div>
                 </div>
+                <div class="w-full sm:w-auto">
+                <a href="{{ route('admin.penerimaan.karyawan.create') }}" class="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-3 rounded-md shadow-sm inline-flex items-center justify-center text-sm">
+                    <i class="fas fa-plus mr-2"></i> Input Data Karyawan
+                </a>
+            </div>
             </div>
             <div class="overflow-x-auto">
                 <table class="min-w-full divide-y divide-gray-200">
@@ -190,6 +209,15 @@
                                 <a href="{{ route('admin.penerimaan.karyawan.edit', ['id' => $karyawan->id]) }}" class="text-blue-600 hover:text-blue-800" title="Edit Data Karyawan">
                                     <i class="fas fa-edit text-lg"></i>
                                 </a>
+                                <form action="{{ route('admin.penerimaan.karyawan.destroy', ['id' => $karyawan->id]) }}" method="POST" class="inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data penerimaan dosen ini?');">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" 
+                                        class="text-red-600 hover:text-red-800 transition-colors duration-150 text-lg" 
+                                        title="Hapus Data Penerimaan Dosen">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </form>
                             </td>
                         </tr>
                         @empty

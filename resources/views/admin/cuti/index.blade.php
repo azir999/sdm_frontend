@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         statusTextSpan.textContent = newText;
                     }
                     
-                    let newClasses = 'inline-flex justify-between items-center w-[30px] rounded-md border shadow-sm px-3 py-1 text-sm font-medium text-white focus:outline-none ';
+                    let newClasses = 'inline-flex justify-between items-center w-full rounded-md border shadow-sm px-3 py-1 text-sm font-medium text-white focus:outline-none ';
                     if (newStatus === 'terima') {
                         newClasses += 'bg-green-500 hover:bg-green-600 border-green-500';
                     } else if (newStatus === 'tolak') {

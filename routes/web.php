@@ -24,11 +24,21 @@ Route::name('admin.')
 
     Route::get('/penerimaan', [PenerimaanController::class, 'index'])->name('penerimaan.index');
    
+     Route::get('/penerimaan', [PenerimaanController::class, 'index'])->name('penerimaan.index');
+    
+    // Rute untuk Penerimaan Dosen
+    Route::get('/penerimaan/dosen/create', [PenerimaanController::class, 'createDosen'])->name('penerimaan.dosen.create');
+    Route::post('/penerimaan/dosen', [PenerimaanController::class, 'storeDosen'])->name('penerimaan.dosen.store');
     Route::get('/penerimaan/dosen/{id}/edit', [PenerimaanController::class, 'editDosen'])->name('penerimaan.dosen.edit');
     Route::put('/penerimaan/dosen/{id}', [PenerimaanController::class, 'updateDosen'])->name('penerimaan.dosen.update');
+    Route::delete('/penerimaan/dosen/{id}', [PenerimaanController::class, 'destroyDosen'])->name('penerimaan.dosen.destroy');
+    
+    // Rute untuk Penerimaan Karyawan
+    Route::get('/penerimaan/karyawan/create', [PenerimaanController::class, 'createKaryawan'])->name('penerimaan.karyawan.create');
+    Route::post('/penerimaan/karyawan', [PenerimaanController::class, 'storeKaryawan'])->name('penerimaan.karyawan.store');
     Route::get('/penerimaan/karyawan/{id}/edit', [PenerimaanController::class, 'editKaryawan'])->name('penerimaan.karyawan.edit');
     Route::put('/penerimaan/karyawan/{id}', [PenerimaanController::class, 'updateKaryawan'])->name('penerimaan.karyawan.update');
-
+    Route::delete('/penerimaan/karyawan/{id}', [PenerimaanController::class, 'destroyKaryawan'])->name('penerimaan.karyawan.destroy');
 
     Route::get('/update', function () {
         return view('admin.update');
