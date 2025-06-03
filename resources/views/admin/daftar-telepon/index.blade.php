@@ -27,12 +27,14 @@
                             <a href="#" data-filter-value="semua" class="filter-item-telepon text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">Semua</a>
                             <a href="#" data-filter-value="laki-laki" class="filter-item-telepon text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">Laki-Laki</a>
                             <a href="#" data-filter-value="perempuan" class="filter-item-telepon text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">Perempuan</a>
-                        </div>
+                            <a href="#" data-filter-value="dosen" class="filter-item-telepon text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">Pegawai</a>
+                            <a href="#" data-filter-value="karyawan" class="filter-item-telepon text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">Karyawan</a>
+                            </div>
                     </div>
                 </div>
             </div>
             <div class="w-full sm:w-auto">
-                <a href="{{ route('admin.daftar-telepon.create') }}" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-3 rounded-md shadow-sm inline-flex items-center justify-center text-sm">
+                <a href="{{ route('admin.daftar-telepon.create') }}" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-3 rounded-md shadow-sm inline-flex items-center justify-center text-">
                     <i class="fas fa-plus mr-2"></i> Tambah Data Telepon
                 </a>
             </div>
@@ -45,6 +47,7 @@
                         <th class="px-4 py-3 text-center text-sm font-semibold text-gray-800 uppercase tracking-wider">Kode</th>
                         <th class="px-4 py-3 text-center text-sm font-semibold text-gray-800 uppercase tracking-wider">Nama</th>
                         <th class="px-4 py-3 text-center text-sm font-semibold text-gray-800 uppercase tracking-wider">Jenis Kelamin</th>
+                        <th class="px-4 py-3 text-center text-sm font-semibold text-gray-800 uppercase tracking-wider">Jenis Pegawai</th>
                         <th class="px-4 py-3 text-center text-sm font-semibold text-gray-800 uppercase tracking-wider">No Hp</th>
                         <th class="px-4 py-3 text-center text-sm font-semibold text-gray-800 uppercase tracking-wider">Aksi</th>
                     </tr>
@@ -55,6 +58,7 @@
                         <td class="px-4 py-3 whitespace-nowrap text-center">{{ $telepon->kode_pegawai }}</td>
                         <td class="px-4 py-3 whitespace-nowrap text-center font-medium">{{ $telepon->nama_pegawai }}</td>
                         <td class="px-4 py-3 whitespace-nowrap text-center">{{ $telepon->jenis_kelamin }}</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-center">{{ $telepon->jenis_pegawai ?? '-' }}</td>
                         <td class="px-4 py-3 whitespace-nowrap text-center">{{ $telepon->no_hp }}</td>
                         <td class="px-4 py-3 whitespace-nowrap text-center">
                             <div class="inline-flex items-center space-x-2">

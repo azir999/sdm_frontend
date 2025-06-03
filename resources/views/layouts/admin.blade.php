@@ -126,6 +126,13 @@
                              <h6 class="mb-2 px-8 text-sm font-semibold text-white/75 pt-3">
                                 Lainnya
                             </h6>
+                            <li class="animation py-3 hover:text-white/50 {{ Request::routeIs('admin.roles.index') || Request::routeIs('admin.roles.create') || Request::routeIs('admin.roles.edit') ? 'border-l-8 border-yellow-300 bg-gradient-to-l from-[#FCD34D]/80 to-[#1865B3]' : '' }}">
+                                <a href="{{ route('admin.roles.index') }}"
+                                   class="flex items-center space-x-3 font-semibold {{ Request::routeIs('admin.roles.index') || Request::routeIs('admin.roles.create') || Request::routeIs('admin.roles.edit') ? 'px-6 text-white' : 'px-8 text-white/90' }}">
+                                    <i class="fas fa-users-cog {{ Request::routeIs('admin.roles.index') || Request::routeIs('admin.roles.create') || Request::routeIs('admin.roles.edit') ? 'text-white' : 'text-white/75' }} h-5 w-5 inline-flex items-center justify-center"></i>
+                                    <span>Manajemen Role</span>
+                                </a>
+                            </li>
                             <li class="animation py-3 hover:text-white/50 {{ Request::routeIs('admin.profile.index') ? 'border-l-8 border-yellow-300 bg-gradient-to-l from-[#FCD34D]/80 to-[#1865B3]' : '' }}">
                                 <a href="{{ route('admin.profile.index') }}" 
                                    class="flex items-center space-x-3 font-semibold {{ Request::routeIs('admin.profile.index') ? 'px-6 text-white' : 'px-8 text-white/90' }}">

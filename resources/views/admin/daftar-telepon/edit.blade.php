@@ -22,13 +22,13 @@
                     <div>
                         <label for="kode_pegawai" class="block text-sm font-medium text-gray-700 mb-1">Kode Pegawai</label>
                         <input type="text" name="kode_pegawai" id="kode_pegawai" value="{{ old('kode_pegawai', $telepon->kode_pegawai ?? '') }}" 
-                               class="form-input mt-1 block w-full border-gray-300 rounded-md shadow-sm py-2 px-3 focus:border-indigo-500 focus:ring-indigo-500 text-sm" readonly>
+                               class="form-input mt-1 block w-full bg-gray-100 border-gray-300 rounded-md shadow-sm py-2 px-3 focus:border-indigo-500 focus:ring-indigo-500 text-sm" readonly>
                     </div>
 
                     <div>
                         <label for="nama_pegawai" class="block text-sm font-medium text-gray-700 mb-1">Nama Pegawai</label>
                         <input type="text" name="nama_pegawai" id="nama_pegawai" value="{{ old('nama_pegawai', $telepon->nama_pegawai ?? '') }}" 
-                               class="form-input mt-1 block w-full border-gray-300 rounded-md shadow-sm py-2 px-3 focus:border-indigo-500 focus:ring-indigo-500 text-sm" readonly>
+                               class="form-input mt-1 block w-full bg-gray-100 border-gray-300 rounded-md shadow-sm py-2 px-3 focus:border-indigo-500 focus:ring-indigo-500 text-sm" readonly>
                     </div>
                     
                     <div>
@@ -40,6 +40,21 @@
                             <option value="">-Pilih Jenis Kelamin-</option>
                             @foreach($jenisKelaminOptions ?? ['Laki Laki', 'Perempuan'] as $option)
                                 <option value="{{ $option }}" {{ old('jenis_kelamin', $telepon->jenis_kelamin ?? '') == $option ? 'selected' : '' }}>
+                                    {{ $option }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="jenis_pegawai" class="block text-sm font-medium text-gray-700 mb-1">
+                            Jenis Pegawai <span class="text-red-500">*</span>
+                        </label>
+                        <select id="jenis_pegawai" name="jenis_pegawai" 
+                                class="form-select mt-1 block w-full border-gray-300 rounded-md shadow-sm py-2 px-3 focus:border-indigo-500 focus:ring-indigo-500 text-sm" required>
+                            <option value="">-Pilih Jenis Pegawai-</option>
+                            @foreach($jenisPegawaiOptions ?? ['Dosen', 'Karyawan'] as $option)
+                                <option value="{{ $option }}" {{ old('jenis_pegawai', $telepon->jenis_pegawai ?? '') == $option ? 'selected' : '' }}>
                                     {{ $option }}
                                 </option>
                             @endforeach

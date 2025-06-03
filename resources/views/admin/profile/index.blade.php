@@ -67,18 +67,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="mt-8 pt-6 border-t border-gray-200 flex justify-end space-x-3">
-                <a href="{{ route('admin.dashboard') }}" 
-                   class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    Kembali
-                </a>
-                <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                    Simpan Perubahan
-                </button>
-            </div>
-        </form>
-    </div>
 @endsection
 
 @push('scripts')

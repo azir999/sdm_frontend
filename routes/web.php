@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\ValidasiCutiController;
 use App\Http\Controllers\Admin\SuratTugasController;
 use App\Http\Controllers\Admin\DaftarTeleponController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\RoleController;
 
 Route::name('admin.')
     ->group(function () {
@@ -51,6 +52,11 @@ Route::name('admin.')
     Route::get('/validasi-cuti', [ValidasiCutiController::class, 'index'])->name('validasi-cuti.index'); 
 
     Route::get('/surat-tugas', [SuratTugasController::class, 'index'])->name('surat-tugas.index');
+    Route::get('/surat-tugas/create', [SuratTugasController::class, 'create'])->name('surat-tugas.create');
+    Route::post('/surat-tugas', [SuratTugasController::class, 'store'])->name('surat-tugas.store');
+    Route::get('/surat-tugas/{id_surat}/edit', [SuratTugasController::class, 'edit'])->name('surat-tugas.edit');
+    Route::put('/surat-tugas/{id_surat}', [SuratTugasController::class, 'update'])->name('surat-tugas.update');
+    Route::delete('/surat-tugas/{id_surat}', [SuratTugasController::class, 'destroy'])->name('surat-tugas.destroy');
 
     Route::get('/daftar-telepon', [DaftarTeleponController::class, 'index'])->name('daftar-telepon.index');
     Route::get('/daftar-telepon/create', [DaftarTeleponController::class, 'create'])->name('daftar-telepon.create'); 
@@ -85,5 +91,12 @@ Route::name('admin.')
     Route::delete('/psikologi/{id_psikologi}', [PsikologiController::class, 'destroy'])->name('psikologi.destroy');
 
     Route::get('/validasi-pelamar', [ValidasiPelamarController::class, 'index'])->name('validasi.pelamar.index');
+
+      Route::get('/roles', [RoleController::class, 'index'])->name('roles.index');
+    Route::get('/roles/create', [RoleController::class, 'create'])->name('roles.create');
+    Route::post('/roles', [RoleController::class, 'store'])->name('roles.store');
+    Route::get('/roles/{id}/edit', [RoleController::class, 'edit'])->name('roles.edit');
+    Route::put('/roles/{id}', [RoleController::class, 'update'])->name('roles.update');
+    Route::delete('/roles/{id}', [RoleController::class, 'destroy'])->name('roles.destroy');
 
 });

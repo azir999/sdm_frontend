@@ -9,9 +9,9 @@ use Illuminate\Support\Collection;
 class DaftarTeleponController extends Controller
 {
     private static $staticDaftarTeleponData = [
-        ['id_pegawai' => 1, 'kode_pegawai' => 'D-123', 'nama_pegawai' => 'Muhammad Azir', 'jenis_kelamin' => 'Laki Laki', 'no_hp' => '081366170407'],
-        ['id_pegawai' => 2, 'kode_pegawai' => 'K-123', 'nama_pegawai' => 'Rizki Apriansyah', 'jenis_kelamin' => 'Perempuan', 'no_hp' => '081366170407'],
-        ['id_pegawai' => 3, 'kode_pegawai' => 'K-789', 'nama_pegawai' => 'Rizki Femous', 'jenis_kelamin' => 'Laki Laki', 'no_hp' => '081234567890'],
+        ['id_pegawai' => 1, 'kode_pegawai' => 'D-123', 'nama_pegawai' => 'Muhammad Azir', 'jenis_kelamin' => 'Laki Laki', 'jenis_pegawai' => 'dosen', 'no_hp' => '081366170407'],
+        ['id_pegawai' => 2, 'kode_pegawai' => 'K-123', 'nama_pegawai' => 'Rizki Apriansyah', 'jenis_kelamin' => 'Perempuan',  'jenis_pegawai' => 'karyawan', 'no_hp' => '081366170407'],
+        ['id_pegawai' => 3, 'kode_pegawai' => 'K-789', 'nama_pegawai' => 'Rizki Femous', 'jenis_kelamin' => 'Laki Laki',  'jenis_pegawai' => 'karyawan', 'no_hp' => '081234567890'],
     ];
 
     private function getTeleponData()

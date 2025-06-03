@@ -43,6 +43,7 @@
                         <th class="px-4 py-3 text-center text-sm font-semibold text-gray-800 uppercase tracking-wider">Nama</th>
                         <th class="px-4 py-3 text-center text-sm font-semibold text-gray-800 uppercase tracking-wider">Ikatan Kerja</th>
                         <th class="px-4 py-3 text-center text-sm font-semibold text-gray-800 uppercase tracking-wider">Jenis Cuti</th>
+                        <th class="px-4 py-3 text-center text-sm font-semibold text-gray-800 uppercase tracking-wider">Tanggal Pengajuan</th>
                         <th class="px-4 py-3 text-center text-sm font-semibold text-gray-800 uppercase tracking-wider">Tanggal Mulai Cuti</th>
                         <th class="px-4 py-3 text-center text-sm font-semibold text-gray-800 uppercase tracking-wider">Tanggal Berakhir Cuti</th>
                         <th class="px-4 py-3 text-center text-sm font-semibold text-gray-800 uppercase tracking-wider">Validasi</th>
@@ -55,6 +56,7 @@
                         <td class="px-4 py-3 text-center whitespace-nowrap font-medium">{{ $cuti->nama_pegawai }}</td>
                         <td class="px-4 py-3 text-center whitespace-nowrap">{{ $cuti->ikatan_kerja }}</td>
                         <td class="px-4 py-3 text-center whitespace-nowrap">{{ $cuti->jenis_cuti }}</td>
+                        <td class="px-4 py-3 text-center whitespace-nowrap">{{ $cuti->tanggal_pengajuan }}</td>
                         <td class="px-4 py-3 text-center whitespace-nowrap">{{ $cuti->tanggal_mulai }}</td>
                         <td class="px-4 py-3 text-center whitespace-nowrap">{{ $cuti->tanggal_berakhir }}</td>
                         <td class="px-4 py-3 whitespace-nowrap">

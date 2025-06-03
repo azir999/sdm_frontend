@@ -43,6 +43,19 @@
                 </div>
 
                 <div>
+                    <label for="jenis_pegawai" class="block text-sm font-medium text-gray-700 mb-1">
+                        Jenis Pegawai <span class="text-red-500">*</span>
+                    </label>
+                    <select id="jenis_pegawai" name="jenis_pegawai" 
+                            class="form-select mt-1 block w-full border-gray-300 rounded-md shadow-sm py-2 px-3 focus:border-indigo-500 focus:ring-indigo-500 text-sm" required>
+                        <option value="">-Pilih Jenis Pegawai-</option>
+                        @foreach($jenisPegawaiOptions ?? ['Dosen', 'Karyawan'] as $option)
+                            <option value="{{ $option }}" {{ old('jenis_pegawai') == $option ? 'selected' : '' }}>{{ $option }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div>
                     <label for="no_hp" class="block text-sm font-medium text-gray-700 mb-1">
                         No HP <span class="text-red-500">*</span>
                     </label>
